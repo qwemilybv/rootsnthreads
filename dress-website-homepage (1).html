@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handmade Dresses - Your Brand Name</title>
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f4f5;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #d4638f;
+        }
+        
+        /* Navigation */
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #d4638f;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            background-image: url('/api/placeholder/1200/800');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.3);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #d4638f;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #c04d79;
+        }
+        
+        /* Featured Collection */
+        .featured {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #333;
+        }
+        
+        .dress-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .dress-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .dress-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .dress-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .dress-info {
+            padding: 20px;
+        }
+        
+        .dress-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .dress-price {
+            font-weight: bold;
+            color: #d4638f;
+            margin-bottom: 15px;
+        }
+        
+        /* Handmade Process */
+        .handmade {
+            background-color: white;
+            padding: 80px 0;
+        }
+        
+        .handmade-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .handmade-img {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .handmade-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .handmade-content {
+            flex: 1;
+        }
+        
+        .handmade-content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .handmade-content p {
+            margin-bottom: 15px;
+        }
+        
+        /* Order CTA */
+        .order-cta {
+            background-color: #f5e6eb;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .order-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .order-container h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .order-container p {
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 50px 0;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .footer-section h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-section p, .footer-section a {
+            margin-bottom: 10px;
+            display: block;
+            color: #ccc;
+            text-decoration: none;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .social-icon {
+            width: 36px;
+            height: 36px;
+            background-color: #555;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+        
+        .social-icon:hover {
+            background-color: #d4638f;
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #555;
+            color: #aaa;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .handmade-container {
+                flex-direction: column;
+            }
+            
+            .handmade-img {
+                order: 2;
+            }
+            
+            .handmade-content {
+                order: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">Your Brand Name</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="collection.html">Collection</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="order.html">Order</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Handcrafted Dresses with Love</h1>
+            <p>Unique, customizable designs made just for you</p>
+            <a href="collection.html" class="btn">Explore Collection</a>
+        </div>
+    </section>
+
+    <section class="featured">
+        <h2 class="section-title">Featured Designs</h2>
+        <div class="dress-grid">
+            <!-- Dress Card 1 -->
+            <div class="dress-card">
+                <img src="/api/placeholder/400/500" alt="Summer Floral Dress" class="dress-img">
+                <div class="dress-info">
+                    <h3 class="dress-title">Summer Floral Dress</h3>
+                    <p class="dress-price">$89.99</p>
+                    <p>Handcrafted lightweight cotton dress with floral pattern, perfect for summer days.</p>
+                </div>
+            </div>
+            
+            <!-- Dress Card 2 -->
+            <div class="dress-card">
+                <img src="/api/placeholder/400/500" alt="Evening Elegance" class="dress-img">
+                <div class="dress-info">
+                    <h3 class="dress-title">Evening Elegance</h3>
+                    <p class="dress-price">$129.99</p>
+                    <p>A stunning evening dress with intricate hand-sewn details for special occasions.</p>
+                </div>
+            </div>
+            
+            <!-- Dress Card 3 -->
+            <div class="dress-card">
+                <img src="/api/placeholder/400/500" alt="Casual Comfort" class="dress-img">
+                <div class="dress-info">
+                    <h3 class="dress-title">Casual Comfort</h3>
+                    <p class="dress-price">$69.99</p>
+                    <p>Everyday comfort meets style with this versatile handmade casual dress.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="handmade">
+        <div class="handmade-container">
+            <div class="handmade-img">
+                <img src="/api/placeholder/600/400" alt="Handmade Process">
+            </div>
+            <div class="handmade-content">
+                <h2>Handcrafted with Care</h2>
+                <p>Every dress in our collection is thoughtfully designed and carefully handmade with attention to every detail.</p>
+                <p>We select only the finest fabrics and materials to ensure comfort, durability, and a perfect fit for every occasion.</p>
+                <p>Each stitch represents our commitment to quality craftsmanship and our passion for creating unique pieces that make you feel beautiful.</p>
+                <a href="about.html" class="btn">Learn About Our Process</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="order-cta">
+        <div class="order-container">
+            <h2>Ready to Order Your Custom Dress?</h2>
+            <p>We'd love to create something special just for you. Our ordering process is simple and we're here to help every step of the way.</p>
+            <a href="order.html" class="btn">Place Your Order</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Your Brand Name</h3>
+                <p>Handcrafted dresses made with love and attention to detail.</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon">FB</a>
+                    <a href="#" class="social-icon">IG</a>
+                    <a href="#" class="social-icon">PT</a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Shop</h3>
+                <a href="collection.html">All Dresses</a>
+                <a href="collection.html">New Arrivals</a>
+                <a href="collection.html">Best Sellers</a>
+                <a href="collection.html">Custom Orders</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Information</h3>
+                <a href="about.html">About Us</a>
+                <a href="about.html">Our Process</a>
+                <a href="contact.html">Contact</a>
+                <a href="#">FAQ</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: hello@yourbrand.com</p>
+                <p>Phone: (123) 456-7890</p>
+                <p>Location: Your City, State</p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 Your Brand Name. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
