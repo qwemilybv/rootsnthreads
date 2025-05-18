@@ -1,0 +1,85 @@
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    main {
+        padding: 1rem;
+    }
+
+    /* Fix hero section for mobile */
+    .hero-content {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .hero-image {
+        margin-right: 0;
+        margin-bottom: 1rem;
+        max-width: 100%;
+        height: 200px;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Fix positioning for mobile */
+    .brand-name,
+    .hero-subtitle {
+        position: static;
+        margin: 1rem 0;
+        text-align: center;
+    }
+
+    .hero-plant {
+        display: none;
+    }
+
+    /* Hip Habesha mobile layout */
+    .hip-habesha-grid {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .hip-habesha-left,
+    .hip-habesha-right {
+        grid-template-rows: auto auto;
+    }
+
+    .hip-habesha-main-image,
+    .hip-habesha-detail {
+        height: 200px;
+    }
+
+    .hip-habesha-title {
+        font-size: 1.8rem;
+    }
+
+    /* Bright & Breezy mobile */
+    .bright-breezy-section {
+        height: 250px;
+    }
+
+    .bright-breezy-overlay {
+        position: static;
+        margin: 1rem;
+        margin-top: auto;
+    }
+
+    .bright-breezy-title {
+        font-size: 1.8rem;
+    }
+
+    /* Sections spacing */
+    .order-section,
+    .about-section {
+        padding: 2rem 1rem;
+    }
+
+    .order-section h2,
+    .about-section h2 {
+        font-size: 2rem;
+    }
+}
