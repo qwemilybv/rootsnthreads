@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="dynamic.css">
     <style>
         * {
             margin: 0;
@@ -638,7 +637,184 @@
         }
 
         /* Responsive Design */
-       </style>
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            main {
+                padding: 1rem;
+                margin-top: 70px;
+            }
+
+            /* Hero section mobile fix */
+            .hero-section {
+                padding: 2rem 1rem;
+            }
+
+            .hero-content {
+                flex-direction: column;
+                min-height: auto;
+                gap: 1rem;
+            }
+
+            .hero-image {
+                margin-right: 0;
+                margin-bottom: 0;
+                max-width: 100%;
+                height: 250px;
+                width: 100%;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+                margin-bottom: 0;
+            }
+
+            /* Fix positioning for mobile */
+            .brand-name {
+                position: static;
+                text-align: center;
+                margin-bottom: 1rem;
+                font-size: 0.8rem;
+                letter-spacing: 2px;
+            }
+
+            .hero-subtitle {
+                position: static;
+                text-align: center;
+                margin-top: 1rem;
+                font-size: 0.8rem;
+                letter-spacing: 2px;
+            }
+
+            .hero-plant {
+                display: none;
+            }
+
+            /* Hip Habesha mobile layout - stack all sections */
+            .hip-habesha-grid {
+                grid-template-columns: 1fr;
+                min-height: auto;
+                gap: 0;
+            }
+
+            .hip-habesha-left {
+                grid-template-rows: 1fr auto;
+                grid-template-columns: 1fr;
+                display: grid;
+            }
+
+            .hip-habesha-right {
+                grid-template-rows: 1fr auto;
+                grid-template-columns: 1fr;
+                display: grid;
+            }
+
+            .hip-habesha-main-image,
+            .hip-habesha-detail {
+                height: 200px;
+                width: 100%;
+            }
+
+            .hip-habesha-text,
+            .hip-habesha-info {
+                padding: 1.5rem 1rem;
+                min-height: auto;
+            }
+
+            .hip-habesha-title {
+                font-size: 2rem;
+                line-height: 1.1;
+            }
+
+            /* Bright & Breezy mobile - ensure proper spacing */
+            .bright-breezy-section {
+                height: 300px;
+                position: relative;
+                margin-bottom: 0;
+            }
+
+            .bright-breezy-overlay {
+                position: absolute;
+                bottom: 1rem;
+                left: 1rem;
+                right: 1rem;
+                margin: 0;
+                padding: 1rem 1.5rem;
+                width: auto;
+            }
+
+            .bright-breezy-title {
+                font-size: 1.8rem;
+                margin: 0;
+            }
+
+            /* Content container mobile */
+            .content-container {
+                margin-bottom: 2rem;
+                border-radius: 10px;
+            }
+
+            .content-container::before {
+                border-radius: 10px;
+            }
+
+            /* Sections spacing */
+            .order-section,
+            .about-section {
+                padding: 2rem 1rem;
+                margin-top: 2rem;
+                border-radius: 10px;
+            }
+
+            .order-section::before,
+            .about-section::before {
+                border-radius: 10px;
+            }
+
+            .order-section h2,
+            .about-section h2 {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .order-checklist {
+                padding: 1.5rem 1rem;
+                margin-top: 1.5rem;
+            }
+
+            .order-checklist::before {
+                border-radius: 8px;
+            }
+
+            /* Fix text sizing */
+            .order-section p,
+            .about-section p {
+                font-size: 1rem;
+                line-height: 1.6;
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        /* Tablet responsive */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            main {
+                padding: 1.5rem;
+            }
+
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .hip-habesha-title {
+                font-size: 2rem;
+            }
+
+            .bright-breezy-title {
+                font-size: 2rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -676,9 +852,7 @@
                 <div class="hip-habesha-grid">
                     <div class="hip-habesha-left">
                         <div class="hip-habesha-main-image">
-                            <div class="image-placeholder">
-                                <img src="first.JPG" alt="Handmade Dresses">
-                            </div>
+                            <img src="first.JPG" alt="Handmade Dresses">
                         </div>
                         <div class="hip-habesha-text">
                             <h2 class="hip-habesha-title">Handmade,<br>Hip,<br>Habesha</h2>
@@ -686,8 +860,7 @@
                     </div>
                     <div class="hip-habesha-right">
                         <div class="hip-habesha-detail">
-                            <div class="image-placeholder">
-                                <img src="second.JPEG" alt="Handmade Dresses">
+                            <img src="second.JPEG" alt="Handmade Dresses">
                         </div>
                         <div class="hip-habesha-info">
                             <p class="availability-text">Available in<br>multiple colors</p>
@@ -703,7 +876,6 @@
                     <h3 class="bright-breezy-title">Bright & Breezy</h3>
                 </div>
             </div>
-            
         </section>
 
         <section id="order" class="order-section">
@@ -734,7 +906,7 @@
 
     <footer>
         <p>&copy; 2025 Roots & Threads Handmade Clothing. All rights reserved.</p>
-        <p>Made with ❤️ for lovers of handcrafted fashion</p>
+        
     </footer>
 
     <script>
